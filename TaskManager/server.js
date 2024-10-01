@@ -1,6 +1,5 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const path = require("path");
 require("dotenv").config();
 const Task = require("./models/task");
 const app = express();
@@ -8,48 +7,46 @@ const app = express();
 const port = process.env.PORT || 8080;
 app.use(express.urlencoded({ extended: true }));
 
-// Pages
 app.get("/", async (req, res) => {
-  const filePath = path.resolve(__dirname, "public/index.html");
-  res.sendFile(filePath);
+  return res.send(`
+        Try endpoints like 
+        1. GET /tasks 
+        2. GET /tasks/:id to get a list of tasks
+        3. POST /tasks/:id and body to add task
+        4. PUT /tasks/:id and body to update task
+        5. DELETE /tasks/:id to delete task by id
+    `);
 });
 
 app.get("/tasks", async (req, res) => {
   try {
     const tasks = await Task.find();
-    return res.send(JSON.stringify(tasks));
+    return res.send(tasks);
   } catch (error) {
     return res.send(error.message);
   }
 });
 
-app.get("/addTask", async (req, res) => {
-  const filePath = path.resolve(__dirname, "public/addTask.html");
-  res.sendFile(filePath);
-});
-// Pages
-
 app.get("/tasks/:id", async (req, res) => {
   try {
     const task = await Task.findById(req.params.id);
-    return res.send(JSON.stringify(task));
+    return res.send(task);
   } catch (error) {
     return res.send("No matching task found");
   }
 });
 
 app.post("/tasks", async (req, res) => {
+  console.log(req.body);
   try {
     const task = new Task({
-      title: req.body.titleInputBox,
-      description: req.body.descriptionInputBox,
-      dueDate: req.body.dueDateInputBox
-        ? new Date(req.body.dueDateInputBox)
-        : null,
-      priority: req.body.priorityOptions,
-      completed: req.body.hasOwnProperty("completedCheckbox"),
+      title: req.body.title,
+      description: req.body.description,
+      dueDate: req.body.dueDate ? new Date(req.body.dueDate) : null,
+      priority: req.body.priority,
+      completed: req.body.hasOwnProperty("completed"),
     });
-    task.save();
+    await task.save();
     return res.send("Task Added Successfully");
   } catch (error) {
     return res.send(error.message);
@@ -57,21 +54,35 @@ app.post("/tasks", async (req, res) => {
 });
 
 app.put("/tasks/:id", async (req, res) => {
+  const updatedValue = {};
+  if (req.body.title) {
+    updatedValue.title = req.body.title;
+  }
+  if (req.body.description) {
+    updatedValue.description = req.body.description;
+  }
+  if (req.body.dueDate) {
+    updatedValue.dueDate = req.body.dueDate;
+  }
+  if (req.body.priority) {
+    updatedValue.priority = req.body.priority;
+  }
+  if (req.body.completed) {
+    updatedValue.completed = req.body.completed;
+  }
   try {
-    const task = await Student.findByIdAndUpdate(
-      req.params.id,
-      { name: "Aisha" },
-      { new: true }
-    );
+    const task = await Task.findByIdAndUpdate(req.params.id, updatedValue, {
+      new: true,
+    });
     return res.send("Successfully updated");
   } catch (error) {
     return res.send(error.message);
   }
 });
 
-app.delete("/delete/:id", async (req, res) => {
+app.delete("/tasks/:id", async (req, res) => {
   try {
-    const student = await Student.findByIdAndDelete("66fb3b7be54d2f4b4fb1c1f8");
+    const task = await Task.findByIdAndDelete(req.params.id);
     return res.send(`Successfully Deleted`);
   } catch (error) {
     return res.status(500).send(error.message);
