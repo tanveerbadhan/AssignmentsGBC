@@ -1,0 +1,141 @@
+p, a, li, ul, h1, h2, h3, h4, body, main, header {
+    font-family: 'Lato';
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-weight: 400;
+}
+
+body {
+    padding: 40px 80px;
+    background-color: black;
+    width: 800px;
+    border: 2px dashed green;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+body header {
+   display: flex;
+   justify-content: center;
+}
+
+.heading {
+    font-size: 34px;
+    line-height: 32px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: green;
+    font-family: 'Bangers';
+}
+
+.basicList {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.basicListItem {
+    margin-bottom: 16px;
+}
+
+.basicListItemBold {
+    color: green;
+    font-weight: 700;
+}
+
+.subHeading {
+    font-size: 26px;
+    line-height: 24px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: green;
+    font-family: 'Bangers';
+}
+
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mainImg {
+    width: 600px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 20px;
+}
+
+.about {
+    margin-bottom: 40px;
+}
+
+.qualitiesLabel {
+    margin-top: 20px;
+    color: green;
+    font-size: 16px;
+    line-height: 12px;
+    font-weight: 700;
+}
+
+.qualities {
+    padding-left: 20px;
+}
+
+.qualitiesListItem {
+    margin-top: 8px;
+    font-size: 16px;
+    line-height: 12px;
+}
+
+.appearances {
+    border-collapse: collapse;
+    width: 800px;
+}
+
+.appearance {
+    border: 1px solid green;
+}
+
+.appearance p {
+   margin: 20px;
+}
+
+.appearance td {
+    border: 1px solid green;
+}
+
+.appearanceHeading {
+    background-color: green;
+    padding: 10px 0px;
+}
+
+.appearanceHeadingImage {
+    width: 170px;
+}
+
+.appearanceHeadingName {
+    width: 150px;
+}
+
+
+.appearancePoster {
+    width: 170px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin: 10px;
+}
+
+.link {
+    color: #008cff;
+    text-decoration: none;
+    margin-left: 40px;
+}
+
+.leftBorderRadius {
+    border-radius: 20px 0px 0px 0px;
+}
+
+.rightBorderRadius {
+    border-radius: 0px 20px 0px 0px;
+}
