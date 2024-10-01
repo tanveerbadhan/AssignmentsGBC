@@ -9,7 +9,7 @@ const taskSchema = mongoose.Schema(
     description: {
       type: String,
     },
-    dueData: {
+    dueDate: {
       type: Date,
     },
     priority: {

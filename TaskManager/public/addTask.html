@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Task</title>
+</head>
+<style>
+    form {
+        display: flex; flex-direction: column; gap: 20px; width: 500px;
+    }
+    input {
+        height: 30px;
+    }
+    #checkbox {
+        display: flex;
+        align-items: center;
+    }
+    button {
+        height: 40px;
+    }
+</style>
+<body>
+    <h1>Add New Task</h1>
+    <form action="tasks" method="POST" >
+        <input type="text" id="title" name="titleInputBox" placeholder="Enter Title" required>
+        <textarea id="description" name="descriptionInputBox" placeholder="Enter Description"></textarea>
+        <input type="date" id="dueDate" name="dueDateInputBox" placeholder="Enter Due Date">
+        <div>
+        <label for="priority">Priority:</label>
+        <select id="priority" name="priorityOptions">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select>
+        </div>
+        <div id="checkbox">
+          <label for="completed">Completed:</label>
+          <input type="checkbox" id="completed" name="completedCheckbox">
+        </div>
+        
+        <button type="submit">Submit</button>
+      </form>
+      
+</body>
+</html>
