@@ -1,0 +1,147 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toronto International Film Festival</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+    <!------------------- Header --------------------->
+    <nav>
+        <div class="navbar">
+            <div class="container nav-container">
+                <input class="checkbox" type="checkbox" />
+                <ul class="hamburger-lines">
+                    <li class="line line1"></li>
+                    <li class="line line2"></li>
+                    <li class="line line3"></li>
+                </ul>
+                <div class="logo">
+                    <h1>Toronto International Film Festival</h1>
+                </div>
+                <ul class="menu-items">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Festival</a></li>
+                    <li><a href="#">What's On</a></li>
+                    <li><a href="purchase.html">Tickets</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!------------------- item --------------------->
+    <main style="background-color: black;">
+        <div>
+            <div class="ticket">
+                <div class="pageTitle">
+                    Choose a ticket that's right for you!
+                </div>
+                <div class="container">
+                    <h2 class="purchaseStyle">Still thinking?</h2>
+                    <p class="purchaseStyle">Here is more information!</p>
+                    <div class="ticketDetail"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="formLook">
+
+            <form id="purchaseForm">
+                <h2 class="formTitle"><span class="material-symbols-outlined paymentIcon">payments</span>Payment Details
+                </h2>
+                <div class="formHalfContainer">
+                    <div class="formHalf">
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Your Full Name">
+                        <p class="error" id="nameError"></p>
+                    </div>
+                    <div class="formHalf">
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email">
+                        <p class="error" id="emailError"></p>
+                    </div>
+                </div>
+
+                <label for="product">Product:</label>
+
+                <select id="filemproduct" name="filemproduct">
+                    <option value="Regular Ticket" data-price="16">Regular film ($16)</option>
+                    <option value="3D Ticket" data-price="19">3D, 70mm, Special Presentation ($19)</option>
+                    <option value="Premium Screening" data-price="26">Premium Screening ($26)</option>
+                </select>
+                <p class="error" id="filemproductError"></p>
+
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" value="1">
+                <p class="error" id="quantityError"></p>
+
+                <h3 class="cardTitle">Card Details</h3>
+                <label for="cardname">Name on Card</label>
+                <input type="text" id="cardname" name="cardname" placeholder="John More Doe">
+                <p class="error" id="cardnameError"></p>
+
+                <label for="cardnumber">Credit card number</label>
+                <input type="text" id="cardnumber" name="cardnumber" maxlength="6" placeholder="6 digits">
+                <p class="error cardError" id="cardnumberError"></p>
+
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" maxlength="3" placeholder="352">
+                <p class="error" id="cvvError"></p>
+                
+
+                <div class="formHalfContainer">
+                    <div class="formHalf">
+                        <label for="expmonth">Exp Month</label>
+                        <input type="text" id="expmonth" name="expmonth" placeholder="Sep">
+                        <p class="error" id="expmonthError"></p>
+                    </div>
+                    <div class="formHalf">
+                        <label for="expyear">Exp Year</label>
+                        <input type="text" id="expyear" name="expyear" maxlength="4" placeholder="2024">
+                        <p class="error" id="expyearError"></p>
+                    </div>
+                </div>
+
+
+                <button type="submit">PLACE ORDER</button>
+            </form>
+            <!-- Shopping Cart Section -->
+            <div class="shoppingCart">
+                <h2>Order Summary</h2>
+                <p><span style="font-weight: bold;">Product:</span> <span id="cart-product"></span></p>
+                <p><span style="font-weight: bold;">Quantity: </span><span id="cart-quantity"></span></p>
+                <p><span style="font-weight: bold;">Subtotal: </span><span id="cart-subtotal"></span></p>
+                <p><span style="font-weight: bold;">Tax (13%): </span><span id="cart-tax"></span></p>
+                <p class="totalPrice">Total Price: <br /><span class="priceSize">$<span
+                            id="total-price">0.00</span></span></p>
+            </div>
+        </div>
+
+    </main>
+    <!------------------- Footer --------------------->
+    <footer>
+        <div class="container"></div>
+        <span> Copyright © 2024 TIFF History Archives. All Rights Reserved.</span>
+        <ul class="footerimg">
+            <li><img src="image/Facebook.png"></li>
+            <li><img src="image/WhatsApp.png"></li>
+            <li><img src="image/tiktok.png"></li>
+            <li><img src="image/twitter.png"></li>
+        </ul>
+    </footer>
+
+    <script src="js/event.js"></script>
+    <script src="js/purchase-detail.js"></script>
+</body>
+
+</html>
+
+</html>

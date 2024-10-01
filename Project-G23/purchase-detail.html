@@ -1,0 +1,87 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toronto International Film Festival</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+    <!------------------- Header --------------------->
+    <nav>
+        <div class="navbar">
+            <div class="container nav-container">
+                <input class="checkbox" type="checkbox" />
+                <ul class="hamburger-lines">
+                    <li class="line line1"></li>
+                    <li class="line line2"></li>
+                    <li class="line line3"></li>
+                </ul>
+                <div class="logo">
+                    <h1>Toronto International Film Festival</h1>
+                </div>
+                <ul class="menu-items">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Festival</a></li>
+                    <li><a href="#">What's On</a></li>
+                    <li><a href="purchase.html">Tickets</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!------------------- Purchase Details --------------------->
+    <main style="background-color:#2f2f2f;">
+        <div class="detailStyle">
+            <div class="purchaseContainer">
+                <div class="purchase-details">
+                    <div class="detailTop">
+                        <p><span class="material-symbols-outlined detailIcon">task_alt</span></p>
+                        <p><span>Thank you, <span id="name"></span></p>
+                        <p>Your order is complete.</p>
+                    </div>
+
+                    <h2>Purchase Details</h2>
+                    <div class="purchaseReceipt">
+                    <p><strong>Full Name:</strong> <span id="name2"></span></p>
+                    <p><strong>Email:</strong> <span id="email"></span></p>
+                    <p><strong>Product:</strong> <span id="product"></span></p>
+                    <p><strong>Quantity:</strong> <span id="quantity"></span></p>
+                    <p><strong>Totail:</strong> <span id="totalprice"></span></p>
+                    <h3>Payment Details</h3>
+                    <p><strong>Name on Card:</strong> <span id="cardname"></span></p>
+                    <p><strong>Card Number:</strong> <span id="cardnumber"></span></p>
+                    <p><strong>Expiration Month:</strong> <span id="expmonth"></span></p>
+                    <p><strong>Expiration Year:</strong> <span id="expyear"></span></p>
+                    <p><strong>CVV:</strong> <span id="cvv"></span></p>
+                </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <!------------------- Footer --------------------->
+    <footer>
+        <div class="container"></div>
+        <span> Copyright © 2024 TIFF History Archives. All Rights Reserved.</span>
+        <ul class="footerimg">
+            <li><img src="image/Facebook.png"></li>
+            <li><img src="image/WhatsApp.png"></li>
+            <li><img src="image/tiktok.png"></li>
+            <li><img src="image/twitter.png"></li>
+        </ul>
+    </footer>
+
+    <script src="js/event.js"></script>
+    <script src="js/purchase-detail.js"></script>
+</body>
+
+</html>
+
+</html>
