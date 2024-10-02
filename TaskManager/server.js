@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.get("/", async (req, res) => {
-  return res.send(`
+  return res.status(200).send(`
         Try endpoints like 
         1. GET /tasks 
         2. GET /tasks/:id to get a list of tasks
@@ -22,9 +22,9 @@ app.get("/", async (req, res) => {
 app.get("/tasks", async (req, res) => {
   try {
     const tasks = await Task.find();
-    return res.send(tasks);
+    return res.status(200).send(tasks);
   } catch (error) {
-    return res.send(error.message);
+    return res.status(500).send(error.message);
   }
 });
 
@@ -34,9 +34,9 @@ app.get("/tasks/:id", async (req, res) => {
     if (task) {
       return res.send(task);
     }
-    return res.send("No matching task found");
+    return res.status(200).send("No matching task found");
   } catch (error) {
-    return res.send(error.message);
+    return res.status(500).send(error.message);
   }
 });
 
@@ -50,9 +50,9 @@ app.post("/tasks", async (req, res) => {
       completed: req.body.hasOwnProperty("completed"),
     });
     await task.save();
-    return res.send("Task Added Successfully");
+    return res.status(201).send("Task Added Successfully");
   } catch (error) {
-    return res.send(error.message);
+    return res.status(500).send(error.message);
   }
 });
 
@@ -77,9 +77,9 @@ app.put("/tasks/:id", async (req, res) => {
     const task = await Task.findByIdAndUpdate(req.params.id, updatedValue, {
       new: true,
     });
-    return res.send("Successfully updated");
+    return res.status(200).send("Successfully updated");
   } catch (error) {
-    return res.send(error.message);
+    return res.status(500).send(error.message);
   }
 });
 
