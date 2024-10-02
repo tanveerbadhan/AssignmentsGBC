@@ -6,6 +6,7 @@ const app = express();
 
 const port = process.env.PORT || 8080;
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.get("/", async (req, res) => {
   return res.send(`
@@ -30,14 +31,16 @@ app.get("/tasks", async (req, res) => {
 app.get("/tasks/:id", async (req, res) => {
   try {
     const task = await Task.findById(req.params.id);
-    return res.send(task);
-  } catch (error) {
+    if (task) {
+      return res.send(task);
+    }
     return res.send("No matching task found");
+  } catch (error) {
+    return res.send(error.message);
   }
 });
 
 app.post("/tasks", async (req, res) => {
-  console.log(req.body);
   try {
     const task = new Task({
       title: req.body.title,
