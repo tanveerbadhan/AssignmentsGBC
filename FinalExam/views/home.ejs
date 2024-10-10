@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/styles/common.css" />
+        <link rel="stylesheet" href="/styles/home.css" />
+        <title>Songs</title>
+    </head>
+    <body>
+        <h1>Listen Up</h1>
+        <div class="wrapper">
+            <div class="allSongs">
+                <h2>All Songs</h2>
+                <ul>
+                    <% for(let i = 0; i < allSongs.length; i++) { %>
+                    <li class="song">
+                        <img src="<%=allSongs[i].image  %>" />
+                        <div class="leftSection">
+                            <h4><%= allSongs[i].title %></h4>
+                            <p class="artist"><%= allSongs[i].artist %></p>
+                        </div>
+                        <form action="/addtoplaylist" method="POST" class="rightSection">
+                            <input type="hidden" name="addsong" value="<%= JSON.stringify(allSongs[i]) %>" />
+                            <button type="submit">Add To Playlist</button>
+                        </form>
+                    </li>
+                    <% } %>
+                </ul>
+            </div>
+            <div class="playlist">
+                <h2>My Playlist</h2>
+                <ul>
+                    <div>
+                        <% if(playlistSongs.length === 0) { %>
+                        <p>There are no songs in your playlist</p>
+                        <% } %>
+                    </div>
+                    <% for(let i = 0; i < playlistSongs.length; i++) { %>
+                    <li class="song">
+                        <img src="<%=playlistSongs[i].image  %>" />
+                        <div class="leftSection">
+                            <h4><%= playlistSongs[i].title %></h4>
+                            <p class="artist"><%= playlistSongs[i].artist %></p>
+                        </div>
+                        <form action="/removefromplaylist" method="POST" class="rightSection">
+                            <input type="hidden" name="removeSong" value="<%= JSON.stringify(playlistSongs[i]) %>" />
+                            <button type="submit">Remove From Playlist</button>
+                        </form>
+                    </li>
+                    <% } %>
+                </ul>
+            </div>
+            <div class="addSong">
+                <h2>Add a Song</h2>
+                <form action="/addsong" method="POST" class="addSongForm">
+                    <input required type="text" placeholder="Enter Song Name" name="nameofsong" />
+                    <input required type="text" placeholder="Enter Artist Name" name="nameofartist" />
+                    <input required type="text" placeholder="Enter Img Url" name="imgurl" />
+                    <Button>Add</Button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

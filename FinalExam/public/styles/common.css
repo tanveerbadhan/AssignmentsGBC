@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: Lato;
+    outline: none;
+}
+
+h1 {
+    font-size: 40px;
+    line-height: 42px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 30px;
+    line-height: 32px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 20px;
+    line-height: 22px;
+}
+
+body {
+    padding: 20px;
+}
+
+.wrapper {
+    display: flex;
+    gap: 40px;
+}
+
+.allSongs {
+    padding: 20px;
+    border: 1px solid #d8d8d8;
+    border-radius: 20px;
+    flex: 1;
+    height: 80vh;
+    overflow: scroll;
+}
+
+.artist {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.allSongs ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.song {
+    display: flex;
+    padding: 16px;
+    border-radius: 20px;
+    border: 1px solid #d8d8d8;
+    gap: 20px;
+}
+
+.song .leftSection {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}   
+
+.song .rightSection {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
+    align-items: flex-end;
+}
+
+img {
+    height: 100px;
+    width: 100px;
+    border-radius: 16px;
+}
+
+button {
+    background: #008cff;
+    color: #fff;
+    border-radius: 16px;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    padding: 12px;
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: uppercase;
+}
+
+.playlist {
+    padding: 20px;
+    border: 1px solid #d8d8d8;
+    border-radius: 20px;
+    flex: 1;
+    height: 80vh;
+    overflow: scroll;
+}
+
+.playlist ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.playlist button {
+    background: rgb(252, 166, 80);
+}
+
+.addSong {
+    width: 300px;
+    padding-right: 20px;
+}
+
+.addSongForm {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+input {
+    height: 40px;
+    border-radius: 16px;
+    border: 1px solid #d8d8d8;
+    padding: 16px;
+}
+
